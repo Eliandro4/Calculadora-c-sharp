@@ -22,6 +22,7 @@ inicio:
     Console.WriteLine("11. Area do Retangulo");
     Console.WriteLine("12. Area do Trapezio");
     Console.WriteLine("13. Area do Losangulo");
+    Console.WriteLine("14. Fatorial");
     Console.Write("Escolha: ");
     int acion = int.Parse(Console.ReadLine()!);
     switch (acion)
@@ -52,6 +53,8 @@ inicio:
             goto artra;
         case 13:
             goto arlos;
+        case 14:
+            goto fato;
     }
 }
 multi:
@@ -197,6 +200,15 @@ arlos:
     Console.ReadLine();
     goto inicio;
 };
+fato:
+{
+    Console.Clear();
+    Console.WriteLine("Escreva o valor da base");
+    int F1 = int.Parse(Console.ReadLine()!);
+    fatorial(F1);
+    Console.ReadLine();
+    goto inicio;
+};
 #endregion
 static void baskara(int A, int B, int C)
 {
@@ -265,4 +277,26 @@ static void aria_losango(float dmenor, float dmaior)
 {
     float resultado = ((dmaior * dmenor) / 2);
     Console.WriteLine("A area do losango é " + resultado);
+};
+static void fatorial(int F)
+{
+    int F2 = F;
+    int back = F;
+    if (F > 1)
+    {
+        for (int i = F; i > 1; i--)
+        {
+            F2 = F2 * ((F - 1));
+            F = F - 1;
+        };
+    }
+    else if (F < -1)
+    {
+        for (int i = F; i < -1; i++)
+        {
+            F2 = F2 * ((F + 1));
+            F = F + 1;
+        };
+    }
+    Console.WriteLine("O fatorial de " + back + " é " + F2);
 };
