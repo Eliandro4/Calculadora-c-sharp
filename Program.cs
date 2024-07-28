@@ -16,6 +16,7 @@ inicio:
     Console.WriteLine("5. Bhaskara");
     Console.WriteLine("6. Potenciação");
     Console.WriteLine("7. Raiz Quadrada");
+    Console.WriteLine("8. Porcentagem");
     Console.Write("Escolha: ");
     int acion = int.Parse(Console.ReadLine()!);
     switch (acion)
@@ -34,6 +35,8 @@ inicio:
             goto pot;
         case 7:
             goto raz;
+        case 8:
+            goto porc;
     }
 }
 multi:
@@ -77,6 +80,17 @@ div:
     Console.WriteLine("Escreva o valor do divisor");
     float B1 = float.Parse(Console.ReadLine()!);
     dividir(A1, B1);
+    Console.ReadLine();
+    goto inicio;
+}
+porc:
+{
+    Console.Clear();
+    Console.WriteLine("Escreva a porcentagem");
+    float A1 = float.Parse(Console.ReadLine()!);
+    Console.WriteLine("Escreva o valor da qual quer pegar a porcentagem");
+    float B1 = float.Parse(Console.ReadLine()!);
+    porcentagem(A1, B1);
     Console.ReadLine();
     goto inicio;
 }
@@ -152,3 +166,8 @@ static void raiz(float A)
     double resultado = (Math.Sqrt(A));
     Console.WriteLine("A raiz é " + resultado);
 }
+static void porcentagem(float A, float B)
+{ //Sim, eu sei que eu poderia ter feito isso usando o "%"
+    float resultado = ((A / B) * 100);
+    Console.WriteLine("O resultado é " + resultado);
+};
