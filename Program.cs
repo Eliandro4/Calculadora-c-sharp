@@ -40,9 +40,9 @@ multi:
 {
     Console.Clear();
     Console.WriteLine("Escreva o valor do multiplicando");
-    int A1 = int.Parse(Console.ReadLine()!);
+    float A1 = float.Parse(Console.ReadLine()!);
     Console.WriteLine("Escreva o valor do multiplicador");
-    int B1 = int.Parse(Console.ReadLine()!);
+    float B1 = float.Parse(Console.ReadLine()!);
     multiplicar(A1, B1);
     Console.ReadLine();
     goto inicio;
@@ -51,9 +51,9 @@ sub:
 {
     Console.Clear();
     Console.WriteLine("Escreva o valor do minuendo");
-    int A1 = int.Parse(Console.ReadLine()!);
+    float A1 = float.Parse(Console.ReadLine()!);
     Console.WriteLine("Escreva o valor do subtraendo");
-    int B1 = int.Parse(Console.ReadLine()!);
+    float B1 = float.Parse(Console.ReadLine()!);
     subtrair(A1, B1);
     Console.ReadLine();
     goto inicio;
@@ -62,9 +62,9 @@ adit:
 {
     Console.Clear();
     Console.WriteLine("Escreva o valor da 1ª parcela");
-    int A1 = int.Parse(Console.ReadLine()!);
+    float A1 = float.Parse(Console.ReadLine()!);
     Console.WriteLine("Escreva o valor da 2ª parcela");
-    int B1 = int.Parse(Console.ReadLine()!);
+    float B1 = float.Parse(Console.ReadLine()!);
     adicionar(A1, B1);
     Console.ReadLine();
     goto inicio;
@@ -73,9 +73,9 @@ div:
 {
     Console.Clear();
     Console.WriteLine("Escreva o valor do dividendo");
-    int A1 = int.Parse(Console.ReadLine()!);
+    float A1 = float.Parse(Console.ReadLine()!);
     Console.WriteLine("Escreva o valor do divisor");
-    int B1 = int.Parse(Console.ReadLine()!);
+    float B1 = float.Parse(Console.ReadLine()!);
     dividir(A1, B1);
     Console.ReadLine();
     goto inicio;
@@ -108,7 +108,7 @@ raz:
 {
     Console.Clear();
     Console.WriteLine("Escreva o número da qual quer a raiz");
-    int A1 = int.Parse(Console.ReadLine()!);
+    float A1 = float.Parse(Console.ReadLine()!);
     raiz(A1);
     Console.ReadLine();
     goto inicio;
@@ -122,24 +122,24 @@ static void baskara(int A, int B, int C)
     Console.WriteLine("X´ = " + x1);
     Console.WriteLine("X´´ = " + x2);
 };
-static void subtrair(int A, int B)
+static void subtrair(float A, float B)
 {
-    int resultado = A - B;
+    float resultado = A - B;
     Console.WriteLine("O resto é " + resultado);
 };
-static void multiplicar(int A, int B)
+static void multiplicar(float A, float B)
 {
-    int resultado = (A * B);
+    float resultado = (A * B);
     Console.WriteLine("O produto é " + resultado);
 };
-static void dividir(int A, int B)
+static void dividir(float A, float B)
 {
-    int resultado = (A / B);
+    float resultado = (A / B);
     Console.WriteLine("O quociente é " + resultado);
 };
-static void adicionar(int A, int B)
+static void adicionar(float A, float B)
 {
-    int resultado = A + B;
+    float resultado = A + B;
     Console.WriteLine("O total é " + resultado);
 };
 static void potencia(int A, int B)
@@ -147,7 +147,7 @@ static void potencia(int A, int B)
     double val = Math.Pow(A, B);
     Console.WriteLine("O valor da potencia é " + val);
 }
-static void raiz(int A)
+static void raiz(float A)
 {
     double resultado = (Math.Sqrt(A));
     Console.WriteLine("A raiz é " + resultado);
