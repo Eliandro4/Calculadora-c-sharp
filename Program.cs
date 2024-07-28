@@ -17,6 +17,11 @@ inicio:
     Console.WriteLine("6. Potenciação");
     Console.WriteLine("7. Raiz Quadrada");
     Console.WriteLine("8. Porcentagem");
+    Console.WriteLine("9. Area do Circulo");
+    Console.WriteLine("10. Area do Triangulo");
+    Console.WriteLine("11. Area do Retangulo");
+    Console.WriteLine("12. Area do Trapezio");
+    Console.WriteLine("13. Area do Losangulo");
     Console.Write("Escolha: ");
     int acion = int.Parse(Console.ReadLine()!);
     switch (acion)
@@ -37,6 +42,16 @@ inicio:
             goto raz;
         case 8:
             goto porc;
+        case 9:
+            goto arcir;
+        case 10:
+            goto artri;
+        case 11:
+            goto arret;
+        case 12:
+            goto artra;
+        case 13:
+            goto arlos;
     }
 }
 multi:
@@ -127,6 +142,61 @@ raz:
     Console.ReadLine();
     goto inicio;
 }
+arcir:
+{
+    Console.Clear();
+    Console.WriteLine("Escreva o valor do raio");
+    float A1 = float.Parse(Console.ReadLine()!);
+    aria_circulo(A1);
+    Console.ReadLine();
+    goto inicio;
+};
+artri:
+{
+    Console.Clear();
+    Console.WriteLine("Escreva o valor da base");
+    float B1 = float.Parse(Console.ReadLine()!);
+    Console.WriteLine("Escreva o valor da altura");
+    float H1 = float.Parse(Console.ReadLine()!);
+    aria_triangulo(B1, H1);
+    Console.ReadLine();
+    goto inicio;
+};
+arret:
+{
+    Console.Clear();
+    Console.WriteLine("Escreva o valor da base");
+    float B1 = float.Parse(Console.ReadLine()!);
+    Console.WriteLine("Escreva o valor da altura");
+    float H1 = float.Parse(Console.ReadLine()!);
+    aria_retangulo(B1, H1);
+    Console.ReadLine();
+    goto inicio;
+};
+artra:
+{
+    Console.Clear();
+    Console.WriteLine("Escreva o valor da base maior");
+    float B1 = float.Parse(Console.ReadLine()!);
+    Console.WriteLine("Escreva o valor da base menor");
+    float B2 = float.Parse(Console.ReadLine()!);
+    Console.WriteLine("Escreva o valor da altura");
+    float A1 = float.Parse(Console.ReadLine()!);
+    aria_trapezio(B1, B2, A1);
+    Console.ReadLine();
+    goto inicio;
+};
+arlos:
+{
+    Console.Clear();
+    Console.WriteLine("Escreva o valor da diagonal menor");
+    float D1 = float.Parse(Console.ReadLine()!);
+    Console.WriteLine("Escreva o valor da diagonal maior");
+    float D2 = float.Parse(Console.ReadLine()!);
+    aria_losango(D1, D2);
+    Console.ReadLine();
+    goto inicio;
+};
 #endregion
 static void baskara(int A, int B, int C)
 {
@@ -170,4 +240,29 @@ static void porcentagem(float A, float B)
 { //Sim, eu sei que eu poderia ter feito isso usando o "%"
     float resultado = ((A / B) * 100);
     Console.WriteLine("O resultado é " + resultado);
+};
+static void aria_circulo(float raio)
+{
+    double resposta = (3.14 * Math.Pow(raio, raio));
+    Console.WriteLine("A area do círulo é " + resposta);
+};
+static void aria_triangulo(float basio, float altura)
+{
+    float resultado = ((basio * altura) / 2);
+    Console.WriteLine("A area do triangulo é " + resultado);
+};
+static void aria_retangulo(float basio, float altura)
+{
+    float resultado = (basio * altura);
+    Console.WriteLine("A area do retângulo é " + resultado);
+};
+static void aria_trapezio(float bmaior, float bmenor, float altura)
+{
+    float resultado = (((bmaior + bmenor) * altura) / 2);
+    Console.WriteLine("A area do trapezio é " + resultado);
+};
+static void aria_losango(float dmenor, float dmaior)
+{
+    float resultado = ((dmaior * dmenor) / 2);
+    Console.WriteLine("A area do losango é " + resultado);
 };
