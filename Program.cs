@@ -204,8 +204,9 @@ fato:
 {
     Console.Clear();
     Console.WriteLine("Escreva o valor da base");
-    int F1 = int.Parse(Console.ReadLine()!);
-    fatorial(F1);
+    int F1 = Math.Abs(int.Parse(Console.ReadLine()!));
+    int F2 = fatorial(F1);
+    Console.WriteLine("O fatorial de " + F1 + " é " + F2);
     Console.ReadLine();
     goto inicio;
 };
@@ -278,25 +279,13 @@ static void aria_losango(float dmenor, float dmaior)
     float resultado = ((dmaior * dmenor) / 2);
     Console.WriteLine("A area do losango é " + resultado);
 };
-static void fatorial(int F)
+static int fatorial(int F)
 {
     int F2 = F;
-    int back = F;
-    if (F > 1)
-    {
-        for (int i = F; i > 1; i--)
+    for (int i = F; i > 1; i--)
         {
             F2 = F2 * ((F - 1));
             F = F - 1;
         };
-    }
-    else if (F < -1)
-    {
-        for (int i = F; i < -1; i++)
-        {
-            F2 = F2 * ((F + 1));
-            F = F + 1;
-        };
-    }
-    Console.WriteLine("O fatorial de " + back + " é " + F2);
+    return F2;
 };
